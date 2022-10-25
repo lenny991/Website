@@ -17,6 +17,12 @@
             background-color: rgb(44, 44, 46);
         }
 
+        .ip {
+            position:absolute;
+            bottom:0;
+            right:0;
+        }
+
         .breadtext {
             color: rgb(232, 243, 240);
         }
@@ -26,18 +32,6 @@
         }
 
     </style>
-  
-    <script src=
-        "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-    </script>
-     
-      <script>
-    $.getJSON("https://api.ipify.org?format=json", function(data) {
-        $("#gfg").html(data.ip);
-    })
-
-    </script>
-
 </head>
 <body>
     <h1 class="title">
@@ -47,5 +41,19 @@
     <a class="breadtext">
         I do stuff and yes. <a class="link" href="https://lennyi.itch.io/"> My itch.io page</link>
     </a>
+
+    <a class="ip"id="gfg"></a>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+
+    $.getJSON("https://api.ipify.org?format=json", function(address) 
+    {
+        var a = document.getElementById("gfg");
+
+        a.textContent = address.ip;
+    })
+
+    </script>
 </body>
 </html>
